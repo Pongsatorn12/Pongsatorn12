@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="/js/myjs2.js"></script>
+    <style>
+        fieldset{border-color: blue;
+                    width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>กรุณากรอกข้อมูลสมัครงาน</h1></center>
+    <form action="MyForm1.html" method="get" name="myForm">
+        <fieldset>
+            <legend>
+                ข้อมูลส่วนตัว
+            </legend>
+            <input type="hidden" name="code" value="2222">
+            <table>
+                <tr>
+                    <td>
+                        รหัสบัตรประชาชน
+                    </td> 
+                    <td>
+                        :
+                    </td>
+                    <td>
+                        <input type="text" name="cardid" required >
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ชื่อ
+                    </td>
+                    <td>
+                        : 
+                    </td>
+                    <td>
+                        <input type="text" name="fname" maxlength="15" required>
+                    </td> 
+                </tr>
+                <tr>
+                    <td>
+                        นามสกุล
+                </td> 
+                <td>
+                    :
+                </td> 
+                <td><input type="text" name="lname" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ชื่อLog in
+                </td>
+                <td>
+                    :
+                </td> 
+                <td>
+                    <input type="text" name="username">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    รหัสผ่าน
+                </td>
+                <td>
+                    :
+                </td>
+                <td> 
+                    <input type="password" name="pass">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    สีที่ชอบ
+                </td>
+                <td>
+                    :
+                </td>  
+                <td>
+                    <input type="color" name="lcolor">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    วันเกิด
+                </td>
+                <td>
+                    :
+                </td >
+                <td>
+                    <input type="date" name="birthday">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    แนบรูปตนเอง
+                </td>
+                <td>
+                    :
+                </td> 
+                <td>
+                    <input type="file" name="fileinfo">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    เพศ
+                </td>
+                <td>
+                    :
+                </td>
+                <td>
+                    <input type="radio" name="gender" value="male" checked>ชาย
+                    <input type="radio" name="gender" value="female">หญิง
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ระบุสถานะ
+                </td> 
+                <td>
+                    :
+                </td> 
+                <td>
+                    <input type="radio" name="status" value="single" checked> โสด  
+                    <input type="radio" name="status" value="marry"> แต่งงาน 
+                    <input type="radio" name="status"value="divorce">หย่าร้าง
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    กิจกรรมที่ชอบ
+                </td> 
+                <td>
+                    :
+                </td> 
+                <td>
+                    <input type="checkbox" name="activity" value="football" id="football">ฟุตบอล
+                    <input type="checkbox" name="activity" value="swiming" id="swimming">ว่ายน้ำ
+                    <input type="checkbox" name="activity" value="sleeping" id="sleeping">นอน
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    สัตว์เลี้ยงที่ชอบ
+                </td> 
+                <td>
+                    :
+                </td> 
+                <td>
+                    <select name="animal">
+                    <option value="dog">หมา</option>
+                    <option value="cat">แมว</option>
+                    <option value="fish">ปลา</option> 
+                    <option value="no" selected>ไม่ชอบสัตว์</option>
+                </select>
+                </td>
+            </tr>
+        </table>
+            นิยามส่วนตัว : <textarea name="comment" rows="5" cols="50 " maxlength=""></textarea><br>
+            <button type="button" onclick="show()">click</button>
+            <input type="reset" value="เคลียร์">
+        
+        </fieldset>
+        <b id="showinfo"></b>
+    </form>
+</body>
+</html>

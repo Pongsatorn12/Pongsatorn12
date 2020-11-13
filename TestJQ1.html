@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="js/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $("#myB1").click(function(){
+                var message = "หัวข้อที่เปลี่ยนแล้ว";
+                $("h1").text(message);
+            });
+            $("#myB2").mouseover(function(){
+                $("h1").text("ข้อความเมื่อวางเมาส์");
+            });
+
+            $("#myForm").keyup(function(){
+                var num1=$("#num1").val()
+                var num2=$("#num2").val()
+                num1=Number.parseInt(num1)
+                num2=Number.parseInt(num2)
+                var message=`คำตอบคือ ${num1+num2}`
+                $("#answer").text(message);
+            });
+        })
+    </script>
+</head>
+<body>
+    <h1> การเขียนโปรแกรมด้วย jquery</h1>
+    <button id="myB1">คลิ๊กแล้วเปลี่ยน</button>
+    <button id="myB2">เมาส์วางบนนี้</button><hr>
+<form id="myForm">
+    ระบุตัวเลขที่1 : <input type="number" id="num1"><br>
+    ระบุตัวเลขที่2 : <input type="number" id="num2"><br>
+</form>
+<div id="answer">
+
+</div>
+</body>
+</html>

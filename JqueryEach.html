@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="js/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script>
+        $(function(){
+           $("#b1").click(function(){  
+               var message = $("#message").val()
+               $("#myM").append(" <li>"+message+"</li>")
+           });
+           $("#b2").click(function(){
+               $("#myM").empty();
+           })
+           $("#b3").click(function(){
+               $("li:last-child").remove();
+           })
+        });
+    </script>
+</head>
+<body>
+    <center><h1>ทดสอบ Jquery $.each() 1</h1></center>
+    Input : <input type="text" id="message">
+    <button id="b1">click</button>
+    <button id="b2">remove data</button>
+    <button id="b3">deleted</button>
+    <ol type="A" id="myM"></ol>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-min.js"></script>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script>
+        function getData(form){
+            var price = form.price.value
+            var down = document.getElementsByName("down")[0].value;
+            var long = document.getElementsByName('long');
+
+for (var i = 0, length = long.length; i < length; i++) {
+  if (long[i].checked) {
+    long=long[i].value;
+    break;
+  }
+}
+           
+            var interest = document.getElementsByName("interest")[0].value;
+            price=Number.parseFloat(price)
+            down=Number.parseFloat(down)
+            interest=Number.parseFloat(interest)
+            var interest2=interest/100;
+            var month=long*12;
+            var total=price-down;
+            var interest3=total*interest2*long;
+            var pay=(interest3+total)/month;
+            var pay = parseFloat(pay).toFixed( 2 );
+            console.log(price,down,interest);
+
+            var  info = "<b><br> แสดงข้องมูลของระบบผ่อนรถยนตร์เป็นรายเดือนดังนี้ </b><br>ราคารถ : "+price+" บาท";
+            info+= "<br>ราคาดาวน์ : "+down+" บาท";
+            info+= "<br>ยอดจัด : "+total+" บาท";
+            info+= "<br>ราคาดาวน์ระยะเวลาผ่อน : "+long+" ปี";
+            info+= "<br>ดอกเบี้ย(%) : "+interest+" % ต่อปี";
+            info+= "<br>ดอกเบี้ย : "+interest3+" บาท";
+            info+= "<br>จ่าย : "+pay+" บาทต่อเดือน";
+            document.getElementById("showinfo").innerHTML=info;
+        }
+    </script>
+    <style>
+        fieldset{
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>กรุณากรอกข้อมูล</h1></center>
+    <form action="formmath.html" method="get" name="myForm">
+    <fieldset>
+        <legend>ระบบผ่อนจ่ายค่างวดรถ</legend>
+    <table>
+        <tr>
+            <td>ราคารถ</td>
+            <td> : </td>
+            <td><input type="number" id="price"></td>
+            <td> บาท<br></td>
+        </tr>
+        <tr>
+            <td>ราคาดาวน์</td>
+            <td> : </td>
+            <td><input type="number" id="down" name="down"> </td>
+            <td>  บาท<br></td>
+      
+        </tr>
+        <tr>
+            <td> ระยะเวลาผ่อน</td>
+            <td> : </td>
+            <td><input type="radio" name="long" id="long" value=1 name="1 year">1 year(12 month)<br>
+                    <input type="radio" name="long" id="long" value=2 name="2 year">2 year(24 month)<br>
+                    <input type="radio" name="long" id="long" value=3 name="3 year">3 year(36 month)<br>
+                    <input type="radio" name="long" id="long" value=4 name="4 year">4 year(48 month)<br>
+                    <input type="radio" name="long" id="long" value=5 name="5 year">5 year(60 month)<br>
+                </td>
+        </tr>
+        <tr>
+            <td>ดอกเบี้ย(%)</td>
+            <td> : </td>
+            <td><input type="number" id="interest" name="interest"></td>
+            <td>ต่อปี</td>
+        </tr>
+    </table>
+    </fieldset>
+    <br>
+    <input type="button" onclick="getData(this.form)" value="คำนวณ">
+    <input type="reset" value="เคลียร์">
+</form>
+    <b id="showinfo"></b>
+</body>
+</html>

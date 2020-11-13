@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery3-5-1/jquery3-5-1.js"></script>
+    <script>
+        var myobj=[
+            {
+                "name":"Mr.P",
+                "age":20,
+                "email":"MrP@gamil.com"
+            },
+            {
+                "name":"Mr.Q",
+                "age":21,
+                "email":"MrQ@gamil.com"
+            },
+            {
+                "name":"Mr.R",
+                "age":22,
+                "email":"MrR@gamil.com"
+            }
+        ]
+        var x=""
+        myobj[2].name="Mr.ZZ";
+        for (i in myobj) {
+            x+="<br><br> ชื่อ :"+myobj[i].name;
+            x+="<br> อายุ :"+myobj[i].age+" ปี";
+            x+="<br> Email :"+myobj[i].email;
+        }
+        
+        $(function(){
+            $("#myMessage").html(x);
+        })
+    </script>
+</head>
+<body>
+    <h1>การดึงข้อมูล JSON</h1>
+    <div id="myMessage"></div>
+</body>
+</html>

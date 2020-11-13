@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getData(form) {
+            message=""
+            for (let i = 0; i < form.activity.length; i++) {
+                if (form.activity[i].checked) {
+                    message+=act=form.activity[i].value+" ";
+                }
+            } 
+            document.getElementById("ans").innerHTML=message
+        }
+    </script>
+</head>
+<body>
+    <center>แสดงCheckBox</center>
+    <form action="TestCheckBoox.html" method="get" name="myForm">
+        กิจกรรมที่ชอบ :
+            <input type="checkbox" name="activity" value="ฟุตบอล">ฟุตบอล
+            <input type="checkbox" name="activity" value="ว่ายน้ำ">ว่ายน้ำ
+            <input type="checkbox" name="activity" value="นอน">นอน
+            <input type="checkbox" name="activity" value="เล่นเกม">เล่นเกม<br>
+        <input type="button" onclick="getData(this.form)" value="ส่งข้อมูล">
+    </form>
+        <p id="ans"></p>
+</body>
+</html>

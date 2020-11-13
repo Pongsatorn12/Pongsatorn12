@@ -1,0 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Piedra);
+@import url(http://fonts.googleapis.com/css?family=Yellowtail);
+body{
+    background-color: aqua;
+   color: brown;
+   font-family: 'Piedra', sans-serif;
+}
+h1{
+    font-family: 'Yellowtail', sans-serif;
+    color: darkgray;
+}

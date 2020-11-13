@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="js/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+    <script>
+        $(function(){
+            $("#myForm").keyup(function(){
+                var num1=$("#num1").val()
+                var num2=$("#num2").val()
+                num1=Number.parseFloat(num1)
+                num2=Number.parseFloat(num2)
+                var num3=num1/100;
+                var bmi=num2/(num3**2)
+                bmi=bmi.toPrecision(3);
+                console.log(num1,num2,num3);
+                var message=`BMI : ${bmi}<br>`
+                var meg_bmi=""
+                if (bmi<18.5) {
+                    meg_bmi="น้ำหนักน้อยกว่าปกติ"
+                }
+                else if(bmi<23) {
+                    meg_bmi="สมส่วน"
+                }
+                else if(bmi<25) {
+                    meg_bmi="หนักเกิน"
+                }
+                else if(bmi<30) {
+                    meg_bmi="อ้วน"
+                }
+                else{
+                    meg_bmi="อ้วน"
+                }
+                $("#answer").html(message+meg_bmi)
+            })
+        });
+    </script>
+</head>
+<body>
+    <form id="myForm">
+        ระบุส่วนสูง : <input type="number" id="num1"><br>
+        ระบุน้ำหนัก : <input type="number" id="num2"><br>
+    </form>
+    <div id="answer">
+</body>
+</html>

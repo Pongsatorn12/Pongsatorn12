@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-min.js"></script>
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(function(){
+            $("#calculate").click(function(){
+                var price=$("#price").val()
+                var down=$("#down").val()
+                var long=$("#long:checked").val()
+                var interest=$("#interest").val()
+                price=Number.parseFloat(price)
+                down=Number.parseFloat(down)
+                interest=Number.parseFloat(interest)
+                var interest2=interest/100;
+                var month=long*12;
+                var total=price-down;
+                var interest3=total*interest2*long;
+                var pay=(interest3+total)/month;
+                console.log(price,down,interest);
+                var message=`
+                ราคารถ : ${price} บาท<br>
+                ราคาดาวน์ : ${down} บาท<br>
+                ยอดจัด :  ${total} บาท<br>
+                ระยะเวลาผ่อน : ${long} year<br>
+                ดอกเบี้ย(%) : ${interest}% ต่อปี<br>
+                ดอกเบี้ย : ${interest3} บาท<br>
+                จ่าย : ${pay} บาท/เดือน<br>
+                `
+                $("#calculater").html(message)
+            })
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>ราคารถ</td>
+            <td> : </td>
+            <td><input type="number" id="price"></td>
+            <td> บาท<br></td>
+        </tr>
+        <tr>
+            <td>ราคาดาวน์</td>
+            <td> : </td>
+            <td><input type="number" id="down"> </td>
+            <td>  บาท<br></td>
+      
+        </tr>
+        <tr>
+            <td> ระยะเวลาผ่อน</td>
+            <td> : </td>
+            <td><input type="radio" name="long" id="long" value="1 " name="1 year">1 year(12 month)<br>
+                    <input type="radio" name="long" id="long" value="2 " name="2 year">2 year(24 month)<br>
+                    <input type="radio" name="long" id="long" value="3 " name="3 year">3 year(36 month)<br>
+                    <input type="radio" name="long" id="long" value="4 " name="4 year">4 year(48 month)<br>
+                    <input type="radio" name="long" id="long" value="5 " name="5 year">5 year(60 month)<br>
+                </td>
+        </tr>
+        <tr>
+            <td>ดอกเบี้ย(%)</td>
+            <td> : </td>
+            <td><input type="number" id="interest" ></td>
+            <td>ต่อปี</td>
+        </tr>
+    </table>
+    <br>
+    <button id="calculate">คำนวณ</button>
+    <div id="calculater"></div>
+</body>
+</html>

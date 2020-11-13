@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-ui-1.12.1/external/jquery/jquery.js"></script>
+
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(
+            function(){
+                $("#bA").mouseenter(
+                    function(){
+                        $("#b1").show(1000)
+                        $("#b2").hide()
+                        $("#b3").hide()
+                    }
+                )
+                $("#bB").mouseenter(
+                    function(){
+                        $("#b2").show(2000)
+                        $("#b1").hide()
+                        $("#b3").hide()
+                    }
+                )
+                $("#bC").mouseenter(
+                    function(){
+                        $("#b3").show(3000)
+                        $("#b1").hide()
+                        $("#b2").hide()
+                    }
+                )
+        }
+        );
+    </script>
+    <style>
+        #divA,#divB,#divC{
+            display: none;
+            
+        }
+        div{
+            width: 100%;
+            height: 50px;
+            border-style: dotted black 1px;
+        }
+    </style>
+</head>
+<body>
+    <h1>สวัสดีชาวโลก</h1>
+   <button id="bA">A</button>
+   <button id="bB">B</button>
+   <button id="bC">C</button><br>
+   <div id="divA">
+       A A A A A A A A A
+   </div>
+   <div id="divB">
+    B B B B B B B B B 
+</div>
+<div id="divC">
+    C C C C C C C C C
+</div>
+<img src="images/107378587_744394092999973_1356276274888570949_n.jpg " id="b1" hidden>
+<img src="images/106497751_941698132924014_5792445330529141407_n.jpg" id="b2" hidden>
+<img src="images/106476573_270838590868630_9087866563346574488_n.jpg" id="b3" hidden>
+</body>
+</html>

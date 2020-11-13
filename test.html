@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    
+    Hi RujJiZ PPR<br>
+    <h1>Wellcome to webpage</h1>
+    <i class="glyphicon glyphicon-cloud"></i>
+    <i class="glyphicon glyphicon-remove"></i>
+    <i class="glyphicon glyphicon-user"></i>
+    <i class="glyphicon glyphicon-envelope"></i>
+    <i class="glyphicon glyphicon-thumbs-up"></i>
+    <form action="test.html" method="get"> 
+        ระบุชื่อ  : <input type="text" name="fullName" id="fullName">
+        <br>
+        ระบุนามสกุล : <input type="text" name="fullName" id="lastName">
+        <br>
+        <button type="button" onclick="myFunction()">
+        Submit
+        </button>
+        <input type="reset">
+    </form>
+    <br>
+    แสดงข้อมูล :
+    <b id="answer"></b>
+    <script>
+        function myFunction(){
+            let fullName=document.getElementById("fullName").value;
+            let lastName=document.getElementById("lastName").value;
+            document.getElementById("answer").innerHTML=fullName +" "+""+lastName;
+        }
+    </script>
+</body>
+</html>
